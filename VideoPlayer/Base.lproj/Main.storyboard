@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Vm0-DU-4E1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Vm0-DU-4E1">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -83,8 +84,26 @@
                     <view key="view" contentMode="scaleToFill" id="sbh-X2-1p3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ubp-2p-exG">
+                                <rect key="frame" x="0.0" y="146" width="375" height="375"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ubp-2p-exG" secondAttribute="height" multiplier="1:1" id="EIh-YD-ISk"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="0.97530043125152588" green="0.97527122497558594" blue="0.9752877950668335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ubp-2p-exG" firstAttribute="centerY" secondItem="sbh-X2-1p3" secondAttribute="centerY" id="H2Z-X4-VgE"/>
+                            <constraint firstItem="ubp-2p-exG" firstAttribute="leading" secondItem="sbh-X2-1p3" secondAttribute="leading" id="a4d-P4-gjN"/>
+                            <constraint firstItem="ubp-2p-exG" firstAttribute="centerX" secondItem="sbh-X2-1p3" secondAttribute="centerX" id="fCc-wJ-Oed"/>
+                            <constraint firstAttribute="trailing" secondItem="ubp-2p-exG" secondAttribute="trailing" id="yOh-bJ-e54"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="videoView" destination="ubp-2p-exG" id="jZM-dI-5Rl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PYc-zp-mxv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

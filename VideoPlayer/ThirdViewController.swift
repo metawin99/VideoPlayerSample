@@ -14,49 +14,47 @@ class ThirdViewController: UIViewController {
 
     var playerViewController: AVPlayerViewController!
     
+    @IBOutlet weak var videoView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // 動画ファイルのURLを取得
+        //For local url
         let bundle = Bundle.main
         let path = bundle.path(forResource: "hogevideo", ofType: "mov")
         let url = URL(fileURLWithPath: path!)
-
-        // アイテム取得
+        
+        //For server url
+        //let url = URL(string: "")
         let playerItem = AVPlayerItem.init(url: url)
         
-        // 生成
         let player = AVPlayer(playerItem: playerItem)
         playerViewController = AVPlayerViewController()
         playerViewController.player = player
         
-        // 設定
-        playerViewController.view.frame = CGRect(x: 54, y: 96, width: view.bounds.width - 108, height: view.bounds.height - 192)
+        playerViewController.view.frame = CGRect(x: 0, y: 300, width: view.bounds.width, height: view.bounds.width)
         playerViewController.showsPlaybackControls = true // 操作パネルを非表示にする場合はfalse
         playerViewController.videoGravity = AVLayerVideoGravity.resizeAspect.rawValue // 矩形にフィット
         
-        // 通知登録
         NotificationCenter.default.addObserver(self, selector: #selector(didPlayerItemReachEnd), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil)
         
-        // 表示
-        view.addSubview(playerViewController.view)
+        videoView.addSubview(playerViewController.view)
+        playerViewController.view.frame = videoView.bounds
         
-        // 再生
         player.play()
+        
     }
-
+    
     @objc func didPlayerItemReachEnd(notification: NSNotification) {
         guard let player = playerViewController.player else {
             return
         }
-        // リピート再生
         player.seek(to: kCMTimeZero)
         player.play()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
 }

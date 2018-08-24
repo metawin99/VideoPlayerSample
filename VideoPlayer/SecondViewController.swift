@@ -15,17 +15,17 @@ class SecondViewController: AVPlayerViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // 動画ファイルのURLを取得
+        //For local url
         let moviePath = Bundle.main.path(forResource: "hogevideo", ofType: "mov")!
         let url = URL(fileURLWithPath: moviePath)
         
-        // アイテム取得
+        //For server url
+        //let url = URL(string: "")
+        
         let playerItem = AVPlayerItem.init(url: url)
         
-        // 生成
         player = AVPlayer(playerItem: playerItem)
         
-        // 再生
         player?.play()
     }
 

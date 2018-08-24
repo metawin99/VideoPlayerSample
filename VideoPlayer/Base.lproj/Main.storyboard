@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Vm0-DU-4E1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="4wl-qX-YUK">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -116,6 +116,65 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MeS-Tu-2eT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1261" y="196"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="tt0-7W-5wh">
+            <objects>
+                <tableViewController id="4wl-qX-YUK" customClass="TableViewController" customModule="VideoPlayer" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="U54-n3-LGd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="TableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="reuseIdentifier" rowHeight="500" id="L2x-fG-a53" customClass="TableViewCell" customModule="VideoPlayer" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="500"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="L2x-fG-a53" id="NGq-tq-mrQ">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="499.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JLB-ep-4r6">
+                                            <rect key="frame" x="0.0" y="62.5" width="375" height="375"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="JLB-ep-4r6" secondAttribute="height" multiplier="1:1" id="rpS-7B-Gr7"/>
+                                            </constraints>
+                                        </imageView>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X81-je-TgM">
+                                            <rect key="frame" x="0.0" y="62.5" width="375" height="375"/>
+                                            <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="X81-je-TgM" secondAttribute="height" multiplier="1:1" id="yum-cU-Xcr"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="X81-je-TgM" firstAttribute="leading" secondItem="NGq-tq-mrQ" secondAttribute="leading" id="Jnr-o4-xpu"/>
+                                        <constraint firstAttribute="trailing" secondItem="JLB-ep-4r6" secondAttribute="trailing" id="VgN-Kh-RqM"/>
+                                        <constraint firstAttribute="trailing" secondItem="X81-je-TgM" secondAttribute="trailing" id="iqy-HZ-jl4"/>
+                                        <constraint firstItem="JLB-ep-4r6" firstAttribute="leading" secondItem="NGq-tq-mrQ" secondAttribute="leading" id="r7I-Mp-gg6"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <constraints>
+                                    <constraint firstItem="JLB-ep-4r6" firstAttribute="centerY" secondItem="L2x-fG-a53" secondAttribute="centerY" id="38I-4K-rAO"/>
+                                    <constraint firstItem="X81-je-TgM" firstAttribute="centerX" secondItem="L2x-fG-a53" secondAttribute="centerX" id="QTy-AN-kfz"/>
+                                    <constraint firstItem="JLB-ep-4r6" firstAttribute="centerX" secondItem="L2x-fG-a53" secondAttribute="centerX" id="XY2-mJ-uHz"/>
+                                    <constraint firstItem="X81-je-TgM" firstAttribute="centerY" secondItem="L2x-fG-a53" secondAttribute="centerY" id="Ykk-4c-Ko9"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="videoImageView" destination="JLB-ep-4r6" id="gkH-tV-2Ix"/>
+                                    <outlet property="videoView" destination="X81-je-TgM" id="NDw-lg-H9R"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="4wl-qX-YUK" id="5td-Gy-oUh"/>
+                            <outlet property="delegate" destination="4wl-qX-YUK" id="u3V-eo-WHZ"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="llY-UE-00Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2119" y="196"/>
         </scene>
     </scenes>
 </document>
